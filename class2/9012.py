@@ -1,12 +1,25 @@
 # 9012 괄호
 N = int(input())
+PSDict = {}
 
 def isVps(PS):
-    for i in range(len(PS)):
-        if PS[0] == ")" or PS[-1] == "(":
-            print("NO")
+    s = 0
+    if PS[-1] == "(" or PS[0] == ")":
+        return "NO"
+    while PS and s>=0:
+        tmp = PS.pop()
+        if tmp == ")":
+            s += 1
+        else:
+            s -= 1
+    if s == 0:
+        return "YES"
+    else:
+        return "NO"
         
 
 for i in range(N):
-    PS = list(input())
-    isVps(PS)
+    PSDict[i] = list(input())
+
+for i in range(len(PSDict)):
+    print(isVps(PSDict[i]))
