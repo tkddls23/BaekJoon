@@ -19,3 +19,4 @@ for i in hasCardNum:
         resultList(cardNum.count(i))
 
 print(result)
+
