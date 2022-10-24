@@ -5,11 +5,13 @@ n = int(stdin.readline())
 stack = []
 result = []
 cur = 1
+flag = 0
 
 for i in range(n):
     num = int(stdin.readline())
     while cur <= num:
-        stack.append("+")
+        stack.append(cur)
+        result.append("+")
         cur += 1
 
     if stack[-1] == num:
@@ -19,6 +21,7 @@ for i in range(n):
         print("NO")
         flag = 1
         break
+
 if flag == 0:
     for i in result:
         print(i)
