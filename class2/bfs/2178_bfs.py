@@ -21,9 +21,12 @@ def bfs(x,y):
             nx = x + dx[i]
             ny = y + dy[i]
             if 0 <= nx < n and 0 <= ny < m and road[nx][ny] == 1:
+                if nx==0 and ny ==0:
+                    continue
                 queue.append((nx, ny))
                 road[nx][ny] = road[x][y] + 1 
     
+    print(road)
     return road[n-1][m-1]
 
 
