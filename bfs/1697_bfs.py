@@ -12,11 +12,10 @@ def bfs():
     while queue:
         x = queue.popleft()
         if x == k:
-            print(d[x])
-            break
+            return d[x]
         for nx in (x-1, x+1, x*2):
             if 0<= nx <= max and d[nx] == 0:
                 d[nx] = d[x] + 1
                 queue.append(nx)
 
-bfs()
+print(bfs())
