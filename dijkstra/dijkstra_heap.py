@@ -1,3 +1,4 @@
+# O(MlogN) - M : 간선의 개수 N : 노드의 개수
 import heapq
 import sys
 

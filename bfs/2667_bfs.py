@@ -42,7 +42,3 @@ visit.sort()
 print(len(visit))
 for k in visit:
     print(k)
-
-print(len(result))
-for i in result:
-    print(i)
