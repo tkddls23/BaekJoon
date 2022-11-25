@@ -5,6 +5,10 @@
       <option name="ignoredErrors">
         <list>
           <option value="N802" />
+<<<<<<< HEAD
+=======
+          <option value="N803" />
+>>>>>>> 1edd6d57ac008e80740c83ca997e8ced59449e3b
         </list>
       </option>
     </inspection_tool>
