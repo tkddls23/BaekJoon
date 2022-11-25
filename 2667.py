@@ -1,7 +1,3 @@
-# 2667 단지번호붙이기
-from sys import stdin
-from collections import deque
-
 from sys import stdin
 from collections import deque
 
@@ -19,7 +15,7 @@ def bfs(x, y):
     cnt = 0
 
     while queue:
-        x, y = queue.popleft()
+        x,y = queue.popleft()
         cnt += 1
         for i in range(4):
             nx = x + dx[i]
@@ -29,20 +25,15 @@ def bfs(x, y):
                 continue
             if matrix[nx][ny] == 1:
                 matrix[nx][ny] = 0
-                queue.append([nx, ny])
+                queue.append([nx,ny])
     visit.append(cnt)
-
 
 for i in range(n):
     for j in range(n):
         if matrix[i][j] == 1:
             matrix[i][j] = 0
-            bfs(i, j)
+            bfs(i,j)
 visit.sort()
 print(len(visit))
 for k in visit:
     print(k)
-
-print(len(result))
-for i in result:
-    print(i)
