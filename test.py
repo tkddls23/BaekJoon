@@ -2,5 +2,5 @@
 n = int(input())
 
 for i in range(n):
-    str = input()
-    print(str[0]+str[-1])
+    str = " "*(4-i)+"*"*(i+1)
+    print(str)
