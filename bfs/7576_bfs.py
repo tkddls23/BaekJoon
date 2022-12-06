@@ -1,4 +1,4 @@
-# 7576 토마토
+# 7576 토마토 1
 from collections import deque
 
 
