@@ -8,7 +8,7 @@ n, m = map(int, stdin.readline().split())
 # 친구 관계 matrix
 matrix = [[0] * (n + 1) for _ in range(n + 1)]
 
-# 탐색한 곳
+# 케빈베이컨 cnt
 countList = [0] * (n + 1)
 
 for i in range(m):
