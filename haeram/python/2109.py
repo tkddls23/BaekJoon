@@ -1,22 +1,4 @@
 from sys import stdin
-<<<<<<< HEAD
-
-fee_arr = []
-day_arr = []
-dp = []
-
-n = int(stdin.readline())
-
-for i in range(n):
-    p, d = map(int, stdin.readline().split())
-
-    fee_arr.append(p)
-    day_arr.append(d)
-
-for it in day_arr:
-    print(it)
-    
-=======
 from queue import PriorityQueue
 
 arr = []
@@ -44,4 +26,3 @@ while pq.qsize():
     ans += temp
 
 print(ans)
->>>>>>> efc85e1f75a264df1de6864cdf4474c5495cbb50
