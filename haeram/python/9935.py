@@ -29,4 +29,3 @@ if(len(stk) == 0):
 else:
     print(''.join(stk))
 
-
