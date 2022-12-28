@@ -7,7 +7,7 @@ from sys import stdin
 # 상어의 현재 위치에서 bfs
 def bfs(a, b):
     visit = [[0] * n for _ in range(n)]  # 방문한 곳인지 체크
-    queue = deque([[a, b]])
+    queue = deque([[a,b]])
     candidate = []
 
     visit[a][b] = 1
