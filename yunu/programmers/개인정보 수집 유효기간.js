@@ -1,11 +1,14 @@
 function solution(today, terms, privacies) {
-    const LAST_DAY = 28;
+    const MONTH = 28;
 
-    const convertDateToArr = (date) => {
-        return date.split(".").map((value) => parseInt(value));
+    const convertDateToNum = (date) => {
+        const [year, month, day] = date
+            .split(".")
+            .map((value) => parseInt(value));
+        return year * 12 * 28 + month * 28 + day;
     };
 
-    const [tYear, tMonth, tDay] = convertDateToArr(today);
+    const todayNum = convertDateToNum(today);
 
     const termTable = terms.reduce((table, term) => {
         const [type, month] = term.split(" ");
@@ -14,24 +17,14 @@ function solution(today, terms, privacies) {
     }, {});
 
     const isValidPrivacy = (date, type) => {
-        let [year, month, day] = date;
-        month += termTable[type];
-        day -= 1;
-        if (day === 0) {
-            month--;
-            day = LAST_DAY;
-        }
-        year += parseInt((month - 1) / 12);
-        month = month % 12 === 0 ? 12 : month % 12;
-        if (tYear > year) return false;
-        if (tYear === year && tMonth > month) return false;
-        if (tYear === year && tMonth === month && tDay > day) return false;
-        return true;
+        let dateNum = convertDateToNum(date);
+        dateNum += termTable[type] * MONTH;
+        return todayNum <= dateNum - 1;
     };
 
     return privacies.reduce((prev, privacy, index) => {
         const [date, type] = privacy.split(" ");
-        if (!isValidPrivacy(convertDateToArr(date), type)) prev.push(index + 1);
+        if (!isValidPrivacy(date, type)) prev.push(index + 1);
         return prev;
     }, []);
 }
