@@ -17,6 +17,7 @@ def dp():
                 d[i+1][j+1] = d[i][j]+1
                 continue
             d[i+1][j+1] = max(d[i+1][j], d[i][j+1])
+            print(d[i+1][j+1])
 
     return d[-1][-1]
 
