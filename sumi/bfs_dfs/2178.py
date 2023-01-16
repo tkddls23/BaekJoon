@@ -7,7 +7,8 @@ input = sys.stdin.readline
 dx = [0, 0, -1, 1]
 dy = [1, -1, 0, 0]
 
-
+# silver 1
+# 최단 경로 bfs 문제
 def is_range(x, y, n, m):
     if 0 <= x < n and 0 <= y < m:
         return True
