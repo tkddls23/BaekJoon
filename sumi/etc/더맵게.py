@@ -1,6 +1,6 @@
 import heapq
 
-# heappush() : o(logN) 
+# heappush() : o(logN)
 def solution(scoville, K):
     heap = scoville
     heapq.heapify(heap)
