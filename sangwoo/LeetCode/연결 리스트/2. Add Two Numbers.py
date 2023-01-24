@@ -31,6 +31,15 @@ class Solution:
         return root.next
 
 
+# 문제 풀이
+'''
+sum 변수와 carry 변수를 사용한다. sum 은 두 노드의 합을 저장하고, carry 는 올림값을 저장한다(0 or 1)
+두 노드의 값을 sum 에 더한다. 
+sum 과 carry 를 더한 값을 노드의 값으로 해서 새로운 노드를 head 에 물려준다. 
+sum 과 carry 를 더한 값이 10 을 넘으면 몫은 올림으로 나머지는 값으로 계산한다.
+즉 몫은 carry 에 저장하고 값은 노드의 값으로 해서 새로운 노드를 head 에 물려준다.  
+'''
+
 # 처음 풀이
 # class Solution:
 #     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
