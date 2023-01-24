@@ -10,60 +10,84 @@ class ListNode:
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        sums = []
-        sum = 0
-        while l1 and l2:
-            sum += l1.val + l2.val
-            # sum 이 10을 넘어가면
-            if sum >= 10:
-                node = ListNode(sum % 10)
-                sums.append(node)
-                # 올림
-                sum = 1
-            else:
-                node = ListNode(sum)
-                sums.append(node)
-                sum = 0
-            l1, l2 = l1.next, l2.next
+        root = head = ListNode(0)
 
-        if l1:
-            while l1:
+        carry = 0
+        while l1 or l2 or carry:
+            sum = 0
+            # 두 노드 값의 합 계산
+            if l1:
                 sum += l1.val
-                if sum >= 10:
-                    node = ListNode(sum % 10)
-                    sums.append(node)
-                    # 올림
-                    sum = 1
-                else:
-                    node = ListNode(sum)
-                    sums.append(node)
-                    sum = 0
                 l1 = l1.next
-        if l2:
-            while l2:
+            if l2:
                 sum += l2.val
-                if sum >= 10:
-                    node = ListNode(sum % 10)
-                    sums.append(node)
-                    # 올림
-                    sum = 1
-                else:
-                    node = ListNode(sum)
-                    sums.append(node)
-                    sum = 0
                 l2 = l2.next
-        if sum:
-            node = ListNode(sum)
-            sums.append(node)
 
-        answer = sums[0]
-        for i in range(len(sums)):
-            if i == len(sums) - 1:
-                sums[i].next = None
-            else:
-                sums[i].next = sums[i + 1]
+            # 몫(올림)과 나머지(값) 계산
+            carry, val = divmod(sum + carry, 10)
+            head.next = ListNode(val)
+            head = head.next
 
-        return answer
+        return root.next
+
+
+# 처음 풀이
+# class Solution:
+#     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+#         sums = []
+#         sum = 0
+#         while l1 and l2:
+#             sum += l1.val + l2.val
+#             # sum 이 10을 넘어가면
+#             if sum >= 10:
+#                 node = ListNode(sum % 10)
+#                 sums.append(node)
+#                 # 올림
+#                 sum = 1
+#             else:
+#                 node = ListNode(sum)
+#                 sums.append(node)
+#                 sum = 0
+#             l1, l2 = l1.next, l2.next
+#
+#         if l1:
+#             while l1:
+#                 sum += l1.val
+#                 if sum >= 10:
+#                     node = ListNode(sum % 10)
+#                     sums.append(node)
+#                     # 올림
+#                     sum = 1
+#                 else:
+#                     node = ListNode(sum)
+#                     sums.append(node)
+#                     sum = 0
+#                 l1 = l1.next
+#         if l2:
+#             while l2:
+#                 sum += l2.val
+#                 if sum >= 10:
+#                     node = ListNode(sum % 10)
+#                     sums.append(node)
+#                     # 올림
+#                     sum = 1
+#                 else:
+#                     node = ListNode(sum)
+#                     sums.append(node)
+#                     sum = 0
+#                 l2 = l2.next
+#         if sum:
+#             node = ListNode(sum)
+#             sums.append(node)
+#
+#         answer = sums[0]
+#         for i in range(len(sums)):
+#             if i == len(sums) - 1:
+#                 sums[i].next = None
+#             else:
+#                 sums[i].next = sums[i + 1]
+#
+#         return answer
 
 
 # 문제 풀이
@@ -83,3 +107,49 @@ sum의 초깃값은 0이지만 두 값의 합이 10보다 크다면 올림을 �
 '''
 별도의 리스트를 사용하지 않고 바로 더해나가기 
 '''
+
+# 별도의 리스트를 사용하지 않고 바로 더해나가기
+# 풀다가 실패한 풀이 -> 바로 더 하는 걸 기존 리스트에 하지말고 새로운 연결 리스트를 만들었으면 어떘을까
+# class Solution:
+#     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+#         sum = 0
+#         head = l1
+#         while l1 and l2:
+#             sum += l1.val + l2.val
+#             # sum 이 10을 넘어가면
+#             if sum >= 10:
+#                 l1.val = sum % 10
+#                 # 올림
+#                 sum = 1
+#             else:
+#                 l1.val = sum
+#                 sum = 0
+#             l1, l2 = l1.next, l2.next
+#
+#         if l1:
+#             while l1:
+#                 sum += l1.val
+#                 if sum >= 10:
+#                     l1.val = sum % 10
+#                     # 올림
+#                     sum = 1
+#                 else:
+#                     l1.val = sum
+#                     sum = 0
+#                 l1 = l1.next
+#         # l1 에 l2연결
+#         if l2:
+#             while l2:
+#                 sum += l2.val
+#                 if sum >= 10:
+#                     l1.next = ListNode(sum % 10)
+#                     # 올림
+#                     sum = 1
+#                 else:
+#                     l1.next = ListNode(sum)
+#                     sum = 0
+#                 l1, l2 = l1.next, l2.next
+#         if sum:
+#             l1 = l1.next
+#
+#         return head
