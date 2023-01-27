@@ -14,7 +14,7 @@ class Solution:
         if head is not None:
             head.next = self.reverseList(head.next)
             head = head.next
-        return head
+        return answer.next
 
 # 첫 시도
 # class Solution:
