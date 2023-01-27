@@ -10,25 +10,34 @@ class ListNode:
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        result = []
-        # 각 노드를 배열에 추가
-        while head is not None:
-            result.append(head)
+        answer = head
+        if head is not None:
+            head.next = self.reverseList(head.next)
             head = head.next
-        # 뒤집는다.
-        result.reverse()
+        return head
 
-        if result:
-            answer = result[0]
-            # 각 노드들을 연결
-            for i in range(0, len(result)):
-                if i == len(result) - 1:
-                    result[i].next = None
-                else:
-                    result[i].next = result[i + 1]
-            return answer
-        else:
-            return head
+# 첫 시도
+# class Solution:
+#     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+#         result = []
+#         # 각 노드를 배열에 추가
+#         while head is not None:
+#             result.append(head)
+#             head = head.next
+#         # 뒤집는다.
+#         result.reverse()
+#
+#         if result:
+#             answer = result[0]
+#             # 각 노드들을 연결
+#             for i in range(0, len(result)):
+#                 if i == len(result) - 1:
+#                     result[i].next = None
+#                 else:
+#                     result[i].next = result[i+1]
+#             return answer
+#         else:
+#             return head
 
 
 # 어떻게 이 풀이를 떠올렸지?
