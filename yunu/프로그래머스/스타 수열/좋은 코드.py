@@ -15,3 +15,7 @@ def solution(a):
                 check[a[i+1]] = i
 
     return max(dic.values()) * 2
+
+# print(solution([0]))
+print(solution([5, 2, 3, 3, 5, 3]))
+print(solution([0, 3, 3, 0, 7, 2, 0, 2, 2, 0]))
