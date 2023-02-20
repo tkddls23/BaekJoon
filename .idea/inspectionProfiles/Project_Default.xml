@@ -1,14 +1,13 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
-    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
-      <option name="ignoredErrors">
+    <inspection_tool class="PyChainedComparisonsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoreConstantInTheMiddle" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
         <list>
-          <option value="N802" />
-<<<<<<< HEAD
-=======
-          <option value="N803" />
->>>>>>> 1edd6d57ac008e80740c83ca997e8ced59449e3b
+          <option value="wonseok.math.sqrt" />
         </list>
       </option>
     </inspection_tool>
