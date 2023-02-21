@@ -55,5 +55,5 @@ def solution(numbers):
 # solution([5])
 # solution([7, 42, 5])
 # solution([63, 111, 95])
-solution([31])
+solution([31] )
 # solution([31,63,127,256,511,1023])
