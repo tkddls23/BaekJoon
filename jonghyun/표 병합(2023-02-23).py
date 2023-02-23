@@ -24,14 +24,8 @@ def update2(value1, value2):
 
 def merge(r1, c1, r2, c2):
     global cells
-
     cell1 = cells[r1][c1]
     cell2 = cells[r2][c2]
-
-    # for m in cell1["merge"]:
-    #     if r1 == m[0] and r2 == m[1] :
-    #         return
-
     cell1["merge"].extend(cell2["merge"])
     cell1["merge"] = list(set(cell1["merge"]))
     cell2["merge"] = cell1["merge"][:]
@@ -100,8 +94,4 @@ def solution(commands):
     } for b in range(i)] for a in range(i)]
     for command in commands:
         command_run(command)
-
-    # for cell in cells :
-    #     print(cell)
-
     return answer
