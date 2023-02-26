@@ -32,7 +32,7 @@ def bfs():
 
     for i in range(n):
         for j in range(m):
-            if tmp_graph[i][j] == 2:
+            if matrix[i][j] == 2:
                 queue.append([i, j])
 
     while queue:

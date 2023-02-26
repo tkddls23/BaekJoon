@@ -1,8 +1,8 @@
-function sayHi() {
-    word = "Hello";
+// function sayHi() {
+//     word = "Hello";
 
-    console.log(word);
+//     console.log(word);
 
-    var word;
-}
-sayHi();
+//     var word;
+// }
+// sayHi();
