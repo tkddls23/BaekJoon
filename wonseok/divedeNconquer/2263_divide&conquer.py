@@ -1,5 +1,8 @@
 # 2263 트리의 순회
+import sys
 from sys import stdin
+sys.setrecursionlimit(1000000)
+
 
 n = int(stdin.readline())
 in_order = list(map(int, stdin.readline().split()))
@@ -30,3 +33,6 @@ def preorder(in_start, in_end, post_start, post_end):
     # left, right로 나눠 분할 정복 방식으로 트리를 추적하여 전위 순회를 찾아냄
     preorder(in_start, in_start + left_count - 1, post_start, post_start + left_count - 1)  # 왼쪽 서브트리
     preorder(in_end - right_count + 1, in_end, post_end - right_count, post_end - 1)  # 오른쪽 서브트리
+
+
+preorder(0, n - 1, 0, n - 1)
