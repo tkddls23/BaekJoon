@@ -1,13 +1,10 @@
 function solution(n, m, section) {
-  let count = 0;
-  let start = -1;
-  for (let i = 0; i < section.length; i++) {
-    if (start === -1) {
-      start = section[i] - 1;
+  let count = 1;
+  let start = section[0];
+  for (let i = 1; i < section.length; i++) {
+    if (section[i] - start >= m) {
+      start = section[i];
       count++;
-    } else if (section[i] - start > m) {
-      i--;
-      start = -1;
     }
   }
 
