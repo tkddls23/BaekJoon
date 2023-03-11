@@ -1,1 +1,6 @@
-/.idea/
+/.idea
+sumi/.idea
+sumi/index.py
+sumi/index.txt
+sumi/replay.txt
+.idea/misc.xml
