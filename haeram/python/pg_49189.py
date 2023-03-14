@@ -23,6 +23,7 @@ def solution(n, edge):
                 visited[g] = visited[cur] + 1
                 dq.append(g)
                 
+    #count most distant nodes
     ans = 0
     max_val = max(visited)
     for n in visited:
