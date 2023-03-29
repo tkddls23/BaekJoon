@@ -1,3 +1,0 @@
-1. https://school.programmers.co.kr/learn/courses/30/lessons/42883?language=python3
-2. [dp] https://www.acmicpc.net/problem/1149
-
