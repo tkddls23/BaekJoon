@@ -1,7 +1,6 @@
 # https://freedeveloper.tistory.com/393 참고
 def solution(sequence, k):
     n = len(sequence)
-    start = 0
     end = 0
     seqSum = 0
     seqArr = []
