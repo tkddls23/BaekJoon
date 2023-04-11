@@ -44,5 +44,35 @@
 #     return len(ans_set)
 
 # ----------------------------------------------------------------------------- #
-
+# def solution(n, m, x, y, queries):
+#     queries.reverse()
+#     sx = x
+#     sy = y
+#     ex = x
+#     ey = y
+    
+#     for i in range(len(queries)):
+#         op, dx = queries[i][0], queries[i][1]
+        
+#         if op == 0:
+#             ex = min(m-1, nx+dx)
+#             nx = ex
+#         if op == 1:
+#             ex = max(0, nx-dx)
+#             nx = ex
+#         if op == 2:
+#             ey = min(n-1, ny+dx)
+#             ny = ey
+#         if op == 3:
+#             ey = max(0, ny-dx)
+#             ny = ey
+            
+#     # 마지막 경우 계산
+#     ans = (n - nx + 1) * (m - ny + 1)
+#     print(nx, ny)
+#     return ans
+        
+        
+# # print(solution(2, 2, 0, 0, [[2,1],[0,1],[1,1],[0,1],[2,1]])) # 4
+# print(solution(2, 5, 0, 1, [[3,1],[2,2],[1,1],[2,3],[0,1],[2,1]])) # 2
 
