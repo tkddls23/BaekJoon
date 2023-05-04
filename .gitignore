@@ -6,3 +6,5 @@ sumi/replay.txt
 .idea/misc.xml
 sumi/test.py
 /venv/
+
+.vscode
